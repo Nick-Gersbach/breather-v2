@@ -1,0 +1,731 @@
+@import "variables";
+
+// Global Styles
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+.container {
+  width: 90%;
+  max-width: 1100px;
+  margin: auto;
+}
+
+.menu-btn {
+  cursor: pointer;
+  position: fixed;
+  z-index: 1000;
+  top: 20px;
+  right: 30px;
+  display: none;
+  color: #686a6c;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.mobile-sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: #fff;
+  z-index: 7;
+  padding: 25px 20px;
+}
+
+hr {
+  display: none;
+}
+
+// Mobile Nav
+
+nav.mobile-nav {
+  padding-top: 20px;
+  display: none;
+  .logo img {
+    width: 120px;
+  }
+
+  .logo-space-btn-container {
+    display: flex;
+    align-items: center;
+  }
+
+  .list-your-space-btn {
+    margin-left: 20px;
+  }
+
+  .list-your-space-btn a {
+    color: $explore-green;
+    font-weight: 300;
+    padding: 8px 10px;
+    border: 1px solid $explore-green;
+    margin-right: 10px;
+  }
+
+  ul {
+    background: #17181a;
+    height: 100vh;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 85%;
+    transform: translateX(-700px);
+    transition: transform 0.5s ease-in-out;
+    padding: 30px;
+    overflow: scroll;
+    li {
+      padding: 30px 0;
+      border-bottom: 0.2px solid white;
+    }
+
+    a {
+      color: #fff;
+      padding: 10px 30px;
+      font-size: 20px;
+      font-weight: 300;
+    }
+  }
+
+  .mobile-logo img {
+    width: 80px;
+  }
+
+  .show {
+    transform: translateX(-30px);
+  }
+}
+
+//Navigation
+header {
+  padding-top: 20px;
+  z-index: 5;
+
+  nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 7;
+    width: 100%;
+  }
+
+  .sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: #fff;
+    z-index: 7;
+    padding: 20px 150px;
+  }
+
+  ul {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 5;
+  }
+
+  li {
+    position: relative;
+    transition: all 0.4s ease-in;
+    z-index: 5;
+    &:hover {
+      & > ul.drop-down-menu {
+        visibility: visible;
+        opacity: 1;
+        z-index: 5;
+        background: #fff;
+      }
+    }
+    ul.drop-down-menu {
+      visibility: hidden;
+      position: absolute;
+      // border: 1px solid black;
+      width: 210px;
+      opacity: 0;
+      -webkit-box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.75);
+      -moz-box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.75);
+      box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.75);
+      transition: all 0.4s ease-in-out;
+      display: block;
+      top: 30px;
+      z-index: 5;
+
+      li {
+        display: block;
+        padding-left: 18px;
+        padding-top: 14px;
+        padding-bottom: 10px;
+        // border: 1px solid black;
+        transition: all 0.3s ease-in;
+        z-index: 5;
+
+        &:hover {
+          background: #dfe1e5;
+        }
+      }
+    }
+  }
+
+  .logo {
+    width: 140px;
+    height: auto;
+  }
+
+  a {
+    color: $nav-icons;
+  }
+
+  .nav-text {
+    padding: 0 15px;
+  }
+
+  .nav-btn {
+    color: $explore-green;
+    font-weight: 300;
+    padding: 10px 12px;
+    border: 1px solid $explore-green;
+    margin-right: 10px;
+    transition: all 0.2s ease-in;
+  }
+
+  .nav-btn:hover {
+    color: #349663;
+  }
+
+  .nav-user {
+    padding-right: 15px;
+    padding-left: 20px;
+  }
+
+  .fa-chevron-down:before {
+    font-size: 11px;
+  }
+
+  .fa-user-circle:before {
+    font-size: 20px;
+  }
+
+  .fa-headset:before {
+    font-size: 20px;
+  }
+}
+
+// Showcase
+
+#showcase {
+  width: 100%;
+  height: 500px;
+  background: url("/dist/img/showcase-compressed.jpg") no-repeat center
+    center/cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  justify-content: flex-start;
+  padding-bottom: 50px;
+  margin-bottom: 20px;
+  margin-top: 75px;
+
+  .search-input-container {
+    background: #fff;
+    margin-top: 20px;
+    padding: 10px 20px;
+    border-radius: 3px;
+  }
+
+  input {
+    border: none;
+    padding: 10px 20px;
+    outline: none;
+    font-size: 16px;
+  }
+
+  input::placeholder {
+    font-size: 15px;
+  }
+
+  .explore-spaces-btn-container {
+    display: inline-block;
+  }
+
+  .explore-btn {
+    color: white;
+    background: $explore-green;
+    padding: 10px 20px;
+    border-radius: 3px;
+    transition: all 0.3s ease-in-out;
+    font-weight: 300;
+  }
+
+  .explore-btn:hover {
+    opacity: 0.9;
+  }
+
+  .fa-long-arrow-alt-right:before {
+    padding-left: 5px;
+    font-size: 20px;
+    position: relative;
+    top: 3px;
+  }
+
+  .fa-search:before {
+    color: $nav-icons;
+  }
+}
+
+//Workspace
+
+#workspace {
+  margin-top: 30px;
+  h1 {
+    font-size: 32px;
+    font-weight: 300;
+  }
+  .features-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 40px;
+  }
+
+  div {
+    margin-top: 30px;
+    i {
+      color: $nav-icons;
+    }
+
+    h2 {
+      font-size: 20px;
+      font-weight: 400;
+      color: #17181a;
+      padding-top: 5px;
+    }
+
+    p {
+      color: $paragraph-text;
+      font-size: 16px;
+      line-height: 1.5;
+      padding-top: 10px;
+    }
+  }
+}
+
+//shelf-image
+#shelf-image {
+  img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+//How Breather Works
+
+#how-breather-works {
+  background: $gray-background;
+
+  .how-breather-works-grid-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 40px;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  h1 {
+    font-size: 32px;
+    font-weight: 300;
+    padding: 20px 0;
+  }
+
+  .numbered-instruction {
+    padding: 30px 0;
+
+    h3 {
+      font-size: 20px;
+      font-weight: 400;
+      padding-bottom: 20px;
+    }
+
+    .blue-line {
+      border-bottom: 1px solid #3e72c1;
+      margin: 0 auto;
+      margin-right: 10px;
+      margin-bottom: 12px;
+      width: 10%;
+      position: relative;
+      right: 402px;
+    }
+
+    p {
+      line-height: 1.5;
+    }
+  }
+
+  img {
+    max-width: 600px;
+    height: auto;
+  }
+}
+
+//Who Uses Breather
+
+#who-uses-breather {
+  background: #eff0f2;
+
+  h2 {
+    font-size: 26px;
+    font-weight: 400;
+    color: #17181a;
+    padding-top: 45px;
+    padding-bottom: 5px;
+  }
+
+  p {
+    font-size: 16px;
+    color: #17181a;
+    font-weight: 300;
+    padding-bottom: 30px;
+  }
+
+  .brand-logos-container {
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+    grid-gap: 20px;
+    padding-bottom: 20px;
+
+    img {
+      width: 50px;
+    }
+  }
+}
+
+//Testimonials
+
+.glider-contain {
+  width: 100%;
+  height: auto;
+  padding-top: 50px;
+  background: #eff0f2;
+  padding-bottom: 20px;
+}
+
+figure {
+  background: white;
+  margin: auto;
+  text-align: center;
+  blockquote {
+    padding: 20px;
+    width: 500px;
+    margin: auto;
+    line-height: 1.5;
+  }
+
+  figcaption {
+    padding-bottom: 20px;
+  }
+}
+
+.glider-dots {
+  margin-top: 15px;
+}
+
+// Footer
+
+footer {
+  background: #17181a;
+  color: white;
+  padding-bottom: 50px;
+
+  .footer-content-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    padding-top: 30px;
+
+    .footer-links-container {
+      img {
+        width: 50px;
+        padding-bottom: 20px;
+      }
+
+      h3 {
+        font-size: 20px;
+        font-weight: 300;
+        padding-bottom: 10px;
+      }
+
+      p {
+        font-size: 16;
+        font-weight: 300;
+        padding-bottom: 10px;
+      }
+
+      div.app-links {
+        padding: 10px 0;
+
+        a {
+          text-decoration: underline;
+        }
+
+        i {
+          margin: 0 10px;
+        }
+      }
+    }
+  }
+
+  a {
+    color: #8a8f99;
+  }
+
+  .footer-btn-container {
+    margin: 40px;
+    position: relative;
+    right: 40px;
+  }
+
+  a.footer-btn {
+    border: 1px solid white;
+    padding: 10px 15px;
+    color: white;
+  }
+
+  div.social-icons i {
+    margin: 0 10px;
+    text-align: center;
+  }
+}
+
+.footer-resources-container {
+  h4 {
+    font-size: 16px;
+    font-weight: 300;
+    padding: 20px 0;
+  }
+
+  p {
+    font-size: 14px;
+    font-weight: 400;
+    padding: 7px 0;
+  }
+}
+
+//Media Queries
+
+//tablet/landscape
+@media only screen and (max-width: 823px) {
+  // * {
+  //   border: 1px solid red;
+  // }
+  nav.mobile-nav {
+    display: block;
+  }
+
+  .menu-btn {
+    display: block;
+  }
+
+  .desktop-nav {
+    display: none;
+  }
+
+  .logo-space-btn-container {
+    justify-content: space-between;
+  }
+
+  .list-your-space-btn {
+    display: none;
+  }
+
+  #workspace {
+    h1 {
+      text-align: center;
+    }
+    .features-container {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  //shelf-image
+  #shelf-image {
+    img {
+      width: 100%;
+      height: auto;
+      margin-top: 60px;
+    }
+  }
+
+  #how-breather-works {
+    background: #fff;
+
+    .how-breather-works-grid-container {
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-gap: 40px;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    h1 {
+      text-align: center;
+      margin-top: 50px;
+    }
+
+    .numbered-instruction {
+      padding: 30px 0;
+
+      h3 {
+        font-size: 20px;
+        font-weight: 400;
+        padding-bottom: 20px;
+      }
+
+      .blue-line {
+        display: none;
+      }
+
+      p {
+        line-height: 1.5;
+        width: 90%;
+      }
+    }
+
+    .how-breather-works-img-container {
+      margin-right: 12px;
+    }
+
+    img {
+      display: none;
+    }
+  }
+
+  //Who Uses Breather
+
+  #who-uses-breather {
+    background: #eff0f2;
+
+    h2 {
+      font-size: 26px;
+      font-weight: 400;
+      color: #17181a;
+      padding-top: 45px;
+      padding-bottom: 5px;
+    }
+
+    p {
+      font-size: 16px;
+      color: #17181a;
+      font-weight: 300;
+      padding-bottom: 30px;
+    }
+
+    .brand-logos-container {
+      margin-top: 20px;
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      grid-gap: 20px;
+      padding-bottom: 20px;
+
+      img {
+        width: 50px;
+      }
+    }
+  }
+
+  .footer-content-container {
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+  }
+}
+
+//Portrait/Smartphones
+@media only screen and (max-width: 500px) {
+  // * {
+  //   border: 1px solid red;
+  // }
+
+  nav.mobile-nav {
+    display: block;
+  }
+
+  .menu-btn {
+    display: block;
+  }
+
+  .desktop-nav {
+    display: none;
+  }
+  .explore-spaces-btn-container {
+    display: block;
+    margin: 20px 0;
+  }
+
+  hr {
+    display: block;
+  }
+
+  #workspace {
+    h1 {
+      text-align: center;
+    }
+    .features-container {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  #who-uses-breather {
+    background: #eff0f2;
+
+    h2 {
+      text-align: center;
+    }
+
+    p {
+      text-align: center;
+    }
+
+    .brand-logos-container {
+      margin-top: 20px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-gap: 20px;
+
+      img {
+        width: 50px;
+      }
+    }
+  }
+  .glider-contain {
+    display: none;
+  }
+}
+
+//Portrait/Smartphones (Extra Small Screens
+@media only screen and (max-width: 360px) {
+  // * {
+  //   border: 1px solid red;
+  // }
+
+  .menu-btn {
+    top: 20px;
+    position: fixed;
+  }
+
+  .list-your-space-btn {
+    display: none;
+  }
+
+  .glider-contain {
+    display: none;
+  }
+}
