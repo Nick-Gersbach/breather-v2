@@ -519,6 +519,38 @@ footer {
   }
 }
 
+.mobile-footer {
+  background: #17181a;
+  color: white;
+  padding-bottom: 50px;
+  display: none;
+
+  .mobile-footer-content-container {
+    padding-top: 20px;
+
+    h4 {
+      padding: 5px 20px;
+    }
+
+    p {
+      padding: 8px 20px;
+    }
+
+    a {
+      color: #8a8f99;
+    }
+
+    .social-icons {
+      margin-top: 20px;
+      padding-left: 20px;
+    }
+
+    i {
+      padding-left: 10px;
+    }
+  }
+}
+
 //Media Queries
 
 //tablet/landscape
@@ -641,10 +673,12 @@ footer {
     }
   }
 
-  .footer-content-container {
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
+  footer {
+    display: none;
+  }
+
+  .mobile-footer {
+    display: block;
   }
 }
 

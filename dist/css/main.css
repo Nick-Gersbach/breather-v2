@@ -349,6 +349,25 @@ footer {
   font-weight: 400;
   padding: 7px 0; }
 
+.mobile-footer {
+  background: #17181a;
+  color: white;
+  padding-bottom: 50px;
+  display: none; }
+  .mobile-footer .mobile-footer-content-container {
+    padding-top: 20px; }
+    .mobile-footer .mobile-footer-content-container h4 {
+      padding: 5px 20px; }
+    .mobile-footer .mobile-footer-content-container p {
+      padding: 8px 20px; }
+    .mobile-footer .mobile-footer-content-container a {
+      color: #8a8f99; }
+    .mobile-footer .mobile-footer-content-container .social-icons {
+      margin-top: 20px;
+      padding-left: 20px; }
+    .mobile-footer .mobile-footer-content-container i {
+      padding-left: 10px; }
+
 @media only screen and (max-width: 823px) {
   nav.mobile-nav {
     display: block; }
@@ -415,10 +434,10 @@ footer {
       padding-bottom: 20px; }
       #who-uses-breather .brand-logos-container img {
         width: 50px; }
-  .footer-content-container {
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start; } }
+  footer {
+    display: none; }
+  .mobile-footer {
+    display: block; } }
 
 @media only screen and (max-width: 500px) {
   nav.mobile-nav {
